@@ -1,3 +1,5 @@
+#by T. Yates
+
 Nx1 = nil      #First number in range
 print("Enter first number in range: ")
 x1 = gets().chomp.to_i
@@ -22,3 +24,5 @@ for x in x1..xn
     puts("#{x} is prime.")
   end
 end
+
+#by T. Yates

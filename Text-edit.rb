@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+#by T. Yates
+
 puts("Enter text to be edited:")
 print(">")
 text = gets().chomp.split(" ")
@@ -14,3 +16,5 @@ text.each do |word|
     print(replace + " ")
   end
 end
+
+#by T. Yates

@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+#by T. Yates
+
 def hypotenuse
   print("Please enter the height of the triangle: ")
   b = gets().to_f
@@ -39,3 +41,5 @@ if choice == 1 then hypotenuse
   elsif choice == 2 then otherSide
   elsif choice == 3 then area
 end
+
+#by T. Yates

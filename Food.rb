@@ -1,3 +1,5 @@
+#by T. Yates
+
 class Food
   def initialize (name, carbs, fat, protein)
     @n = name
@@ -14,3 +16,5 @@ end
 ban = Food.new("banana", 50, 5, 5)
 
 puts(ban)
+
+#by T. Yates

@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+#by T. Yates
+
 puts("Enter text for analysis:")
 words = gets().chomp.split(" ")
 
@@ -44,3 +46,5 @@ end
 #for word in text
 #   if  
 #end
+
+#by T. Yates

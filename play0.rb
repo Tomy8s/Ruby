@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+#by T. Yates
+
 class Greet
     def initialize(name)
       @name = name
@@ -20,3 +22,5 @@ while gets.downcase[0] == "h"
   hi.hi
 end
 hi.bye
+
+#by T. Yates

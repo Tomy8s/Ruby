@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+#by T. Yates
+
 print("Enter first number in range: ")
 x1 = gets().to_i
 print("Enter last number  in range: ")
@@ -24,4 +26,5 @@ factors = Array.new
       puts("The factors of #{x} are #{factors}.")
   end
 end
-  
+
+#by T. Yates

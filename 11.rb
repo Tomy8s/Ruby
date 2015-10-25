@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+#by T. Yates
 class X
   @@var = 100
   @var = "abc"
@@ -10,3 +11,5 @@ end
 
 ob = X.new
 p(ob)
+
+#by T. Yates

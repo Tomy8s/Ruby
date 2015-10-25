@@ -1,3 +1,5 @@
+#by T. Yates
+
 STUFF = "hello\n"
 i=0
 while i<10
@@ -8,3 +10,5 @@ while i<10
   end
   print hello + "\n"
 end
+
+#by T. Yates
