@@ -2,7 +2,7 @@ class Pyramid
   def initialize base='null'
     if base.is_a? Array
       @base = base.map do |num|
-        num.to_f
+        convert(num.to_f)
       end
     end
   end
@@ -12,7 +12,7 @@ class Pyramid
     base = gets().chomp
     base = base.split(',')
     base = base.map do |num|
-      num.to_f
+      convert(num.to_f)
     end
     @base = base
   end
@@ -33,9 +33,17 @@ class Pyramid
   def build_row prev_row
     row = Array.new()
     (prev_row.size - 1).times do |index|
-      row << prev_row[index] + prev_row[index + 1]
+      sum = convert(prev_row[index] + prev_row[index + 1])
+      row << sum
     end
     return row
+  end
+
+  def convert sum
+    if sum - sum.to_i == 0 then
+      sum = sum.to_i
+    end
+    sum
   end
 
   def print_random_pyramid size=10, max_input=100
@@ -46,7 +54,7 @@ class Pyramid
     @base = base
     print_pyramid
   end
-
+  
   def print_pyramid
     if !@pyramid then build_pyramid end
     for row in @pyramid do
@@ -54,7 +62,30 @@ class Pyramid
       puts
     end
   end
+
+  def find_block_width
+    if !@pyramid then build_pyramid end
+    if !@block_width then @block_width = 0 end
+    @pyramid.flatten.each do |block|
+      if block.to_s.size > @block_width
+        @block_width = block.to_s.size
+      end
+    end
+  end
+  
+  def pretty_print_pyramid
+    if !@pyramid then build_pyramid end
+    if !@block_width then find_block_width end
+    puts '/\\'.center((@block_width + 4)* @pyramid.size)
+    for row in @pyramid do
+      new_row = row.map do |block|
+        block.to_s.center @block_width + 2
+      end
+      print ('/' + new_row.join('|') + '\\').center((@block_width + 4)* @pyramid.size)
+      puts 
+    end
+  end
 end
-pyramid = Pyramid.new [1,2,3,4,5,6,7,8]
-pyramid.print_pyramid
+pyramid = Pyramid.new [1, 2, 3,4,4]
+pyramid.pretty_print_pyramid
 # pyramid.print_random_pyramid 10
